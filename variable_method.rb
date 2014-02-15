@@ -1,4 +1,3 @@
-
 def my_string
   'Hello World' 
 end
