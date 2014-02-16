@@ -4,7 +4,7 @@ def calculateAge(seconds)
   year_string = year_raw.to_s
   year_split = year_string.split('.')
   year = year_split.first
-  month = year_split.last.to_f.round
+  month = year_split.last.to_i
   puts "I'm #{year} years and #{month} months old."
   [year, month]
 end
