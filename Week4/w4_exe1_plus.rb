@@ -4,15 +4,15 @@ class Dog
   end
 
   def bark
-    puts "#{@name} says woof!"
+    'woof!'
   end
 
   def eat
-    puts "#{@name} is eating..."
+    'gnam gnam!'
   end
 
   def chase_cat
-    puts "#{@name} is following the cat!"
+    'arf arf arf!'
   end
 
   def teach_trick(trick,&block)
