@@ -1,20 +1,33 @@
 class Shape
-  def initialize name
-    @name = name
+  def rotate
+    'Rotating around the center of ' + self.class.name
   end
-  def rotate(rotation_type)
-    "#{@name} is rotating around #{rotation_type}"
-  end
-  def play_sound(format)
-    "#{@name} is playing file #{@name}.#{format}"
-  end
-  def click(rotation_type = 'the center', format = 'aif')
-    puts rotate(rotation_type)
-    puts play_sound(format)
+ 
+  def play_sound
+    "I am playing the sound #{self.class.name}.aif"
   end
 end
  
-Shape.new("Square").click
-Shape.new("Triangle").click
-Shape.new("Circle").click
-Shape.new("Amoeba").click('a end point', 'hif')
+class Amoeba < Shape
+  def rotate
+    'I am rotating around a end point!'
+  end
+ 
+  def play_sound
+    'I am playing the sound amoeba.hif'
+  end
+end
+ 
+Square = Class.new(Shape)
+square = Square.new
+puts square.play_sound
+puts square.rotate
+
+Triangle = Class.new(Shape)
+triangle = Triangle.new
+puts triangle.play_sound
+puts triangle.rotate
+
+amoeba = Amoeba.new
+puts amoeba.play_sound
+puts amoeba.rotate
